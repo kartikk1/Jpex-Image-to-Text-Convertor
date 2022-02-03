@@ -1,0 +1,71 @@
+@media screen and (max-width:1196px){
+    .img-wrapper {
+        margin-top: 0;
+        margin-left: 20px;
+    }
+}
+
+
+
+@media screen and (max-width:994px) {
+    .img-wrapper{
+        margin: auto;
+        width: 90% !important;
+    }
+    .img-fluid {
+        max-width: 86%;
+    }
+    .cards-1 {
+        padding-top: 4.25rem;
+    padding-bottom: 0rem;
+    }
+    .basic-1 {
+        padding-top: 1rem;
+        padding-bottom:0rem;
+    }
+    .form {
+        padding-top: 2rem;
+    }
+    .container {
+        max-width: 94%;
+    }
+    /* .swiper-slide{
+        width: 150px !important;
+    } */
+    .col-xl-7{
+        padding-right: 0;
+    }
+    .tutorial-head{
+        padding-bottom: 20px;
+    }
+    video{
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:450px) {
+    .header h1 {
+        margin-bottom: 1rem;
+        color: #fff;
+        font-size: 2.2rem;
+    }
+    .img-fluid {
+        max-width: 63%;
+    }
+    .tutorial-head{
+        font-size: 1.6rem;
+        padding-bottom: 20px;
+    }
+    .cards-1 {
+        padding-top: 2.25rem;
+    }
+    .basic-1 {
+        padding-top: 0rem;
+    }
+}
+
+@media screen and (max-width:690px){
+    video{
+        height: auto;
+        width: 100%;
+    }
+}

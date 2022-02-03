@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+
+    <!-- <meta name="description" content="">
+    <meta name="author" content=""> -->
+
+
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Jpex -Image to Text Convertor</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/fontawesome-all.css" rel="stylesheet">
+    <link href="static/css/styles.css" rel="stylesheet">
+    <link href="static/css/swiper.css" rel="stylesheet">
+    <link href="static/css/phone.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+    <!-- Preloader -->
+    <div class="spinner-wrapper" id="preloader">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand logo-image" href="index.html">
+                <h1>JPEX</h1>
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-awesome fas fa-bars"></span>
+                <span class="navbar-toggler-awesome fas fa-times"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#working">WORKING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#video">VIDEO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#feedback">FEEDBACK</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-xl-5">
+                        <div class="text-container">
+                            <h1>JPEX - Image to Text Convertor</h1>
+                            <p class="p-large">To convert image to text , upload the picture and click on submit button.
+                            </p>
+                            <a class="btn-solid-lg page-scroll" href="#video">VIEW TUTORIAL</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-7">
+                        <div class="image-container">
+                            <div class="img-wrapper">
+                                <img class="main-img" id="display-image" src="static/images/image.svg"
+                                    alt="alternative">
+                                <form action="http://3.144.137.21:8888/image-to-string" method="post">
+                                    <div class="fileinput">
+                                        <input type="file" class="fileinput__input"
+                                            onchange="encodeImageFileAsURL(this)" id="blah"
+                                            accept="image/png, image/jpeg , image/jpg" />
+                                        <div class="fileinput__face">
+                                            <div class="fileinput__button" id="status"><i class="fa fa-upload"></i>
+                                                Choose image...
+                                            </div>
+                                            <div class="fileinput__status-text" id="status-path"></div>
+                                        </div>
+                                        <div class="result-text" id="result-text-box">
+                                            <p id="result-text">Text</p>
+                                        </div>
+                                        <!-- <button type="submit" value="Submit">Submit</button> -->
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        viewBox="0 0 1920 310">
+        <defs>
+            <style>
+                .cls-1 {
+                    fill: #5f4def;
+                }
+            </style>
+        </defs>
+        <title>header-frame</title>
+        <path class="cls-1"
+            d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z" />
+    </svg>
+    <!-- end of header -->
+
+
+
+    <!-- Features -->
+    <div class="slider-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="slider-container">
+                        <div class="swiper-container image-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <!-- <img class="img-fluid" src="images/customer-logo-1.png" alt="alternative"> -->
+                                    <h4>Simple</h4>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- <img class="img-fluid" src="images/customer-logo-2.png" alt="alternative"> -->
+                                    <h4>Easy to Use</h4>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- <img class="img-fluid" src="images/customer-logo-3.png" alt="alternative"> -->
+                                    <h4>Fast</h4>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- <img class="img-fluid" src="images/customer-logo-4.png" alt="alternative"> -->
+                                    <h4>Saves Time</h4>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- <img class="img-fluid" src="images/customer-logo-5.png" alt="alternative"> -->
+                                    <h4>Free to Use</h4>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- <img class="img-fluid" src="images/customer-logo-6.png" alt="alternative"> -->
+                                    <h4>User Friendly</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- How it works -->
+    <div class="cards-1" id="working">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- <div class="above-heading">DESCRIPTION</div> -->
+                    <h2 class="h2-heading">How it Works ?</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-fluid" src="static/images/upload.png" alt="alternative">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Upload</h4>
+                            <p>You just simply need to upload your image in the format of jpg / jpeg / png .</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-fluid" src="static/images/extraction.png" alt="alternative">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Text Extraction</h4>
+                            <p>Our system extracts all the accurate text from the image and process further.</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-fluid" src="static/images/download.png" alt="alternative">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Output</h4>
+                            <p>Jpex automatically downloads converted text in the form of text file .</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Video -->
+    <div id="video" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h2 class="tutorial-head"> Tutorial on how to use <br>Jpex - Image to text convertor</h2>
+                        <p>Steps to use Jpex :</p>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Choose the image you want to upload</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Click on Submit Button</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Download the pdf file of the text. </div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">You can also give feedback of Jpex if you want.</div>
+                            </li>
+                        </ul>
+                        <a class="btn-solid-reg page-scroll" href="#header">TRY JPEX</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <!-- <img class="img-fluid" src="static/images/details.png" alt="alternative"> -->
+                        <video controls>
+                            <source src="static/images/Jpex -Image to Text Convertor - Brave 2022-02-02 23-52-30.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                          </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Feedback  -->
+    <div class="form" id="feedback">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <!-- <div class="above-heading">FEEDBACK</div> -->
+                        <h2>Send us your feedback!</h2>
+                        <!-- Newsletter Form -->
+                        <form id="newsletterForm" action="/" method="post" target="blank" autocomplete="off">
+                            <!-- data-toggle="validator" data-focus="false" -->
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control-input" id="name" required
+                                    placeholder="Name">
+                                <!-- <label class="label-control" for="name">Name</label> -->
+                                <input type="email" name="email" class="form-control-input" id="email" required
+                                    placeholder="Email">
+                                <textarea class="form-control-input" name="comments" cols="30" rows="5"
+                                    placeholder="Comments"></textarea>
+
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" value="Submit"
+                                    onclick="document.getElementById('newsletterForm').submit();"
+                                    class="form-control-submit-button">SUBMIT</button>
+                            </div>
+                            <div class="form-message">
+                                <div id="nmsgSubmit" class="h3 text-center hidden"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="icon-container">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <svg class="footer-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        viewBox="0 0 1920 79">
+        <defs>
+            <style>
+                .cls-2 {
+                    fill: #5f4def;
+                }
+            </style>
+        </defs>
+        <title>footer-frame</title>
+        <path class="cls-2"
+            d="M0,72.427C143,12.138,255.5,4.577,328.644,7.943c147.721,6.8,183.881,60.242,320.83,53.737,143-6.793,167.826-68.128,293-60.9,109.095,6.3,115.68,54.364,225.251,57.319,113.58,3.064,138.8-47.711,251.189-41.8,104.012,5.474,109.713,50.4,197.369,46.572,89.549-3.91,124.375-52.563,227.622-50.155A338.646,338.646,0,0,1,1920,23.467V79.75H0V72.427Z"
+            transform="translate(0 -0.188)" />
+    </svg>
+    <div id="contact" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-col first">
+                        <h4>About Jpex</h4>
+                        <p class="p-small">Jpex is an online Image to text Convertor which works on a single click .
+                            We're here to minimize your time wastage and increase your work efficiency</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-col middle">
+                        <h4>Team Details</h4>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Kartik Kukreja ( Roll No. 20001016025 )</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Harsh Verma ( Roll No. 20001016018 )</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-col last">
+                        <h4>Contact</h4>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="media-body">Faridabad , Haryana , India</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-envelope"></i>
+                                <div class="media-body"><a class="white"
+                                        href="mailto:contact@tivo.com">contact-jpex@gmail.com</a> <i
+                                        class="fas fa-globe"></i><a class="white" href="#your-link">www.jpex.com</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © 2022 <a href="https://inovatik.com"> Jpex</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.easing.min.js"></script>
+    <script src="static/js/swiper.min.js"></script>
+    <script src="static/js/jquery.magnific-popup.js"></script>
+    <script src="static/js/validator.min.js"></script>
+    <script src="static/js/scripts.js"></script>
+
+    <script>$('.fileinput').each((i, el) => {
+
+            const $widget = $(el);
+
+            const $input = $widget.children('.fileinput__input').eq(0);
+
+            const $button = $widget.find('.fileinput__button').eq(0);
+
+            const $statusText = $widget.find('.fileinput__status-text').eq(0);
+
+            $button.click((e) => $input.trigger(e));
+
+            $input.change((e) => $statusText.text(e.target.value));
+        });</script>
+    <script>
+        var imagebase64 = "";
+
+        function encodeImageFileAsURL(element) {
+            var file = element.files[0];
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                imagebase64 = reader.result;
+                var image = imagebase64.split("base64,");
+                // console.log(image[1]);
+                convert(image[1]);
+                // document.getElementById('display-image').style.visibility = "hidden";
+                // document.getElementById('display-image').style.display = "none";
+                // document.getElementById('blah').style.visibility = "hidden";
+                // document.getElementById('blah').style.display = "none";
+                // document.getElementById('status-path').style.visibility = "hidden";
+                // document.getElementById('status-path').style.display = "none";
+                // document.getElementById('status').style.visibility = "hidden";
+                // document.getElementById('status').style.display = "none";
+            }
+            reader.readAsDataURL(file);
+        }
+        function convert(image_url) {
+            var data = image_url;
+            const Url = 'http://3.144.137.21:8888/image-to-string';
+            const otherParam = {
+                body: data,
+                method: "POST"
+                // mode: 'no-cors'
+            };
+            fetch(Url, otherParam)
+                .then(res => res.json())
+                .then(data => updateText(data.extracted_text));
+            
+
+            // data.extracted_text
+            // document.getElementById('result-text').innerText(data.extracted_text);
+        }
+        function updateText(text) {
+            // console.log("Text is: " , text);
+            // document.getElementById('result-text').style.visibility="visible";
+            // document.getElementById('result-text').innerHTML=text;
+            var textToSave = text;
+            
+
+            var hiddenElement = document.createElement('a');
+            // document.getElementById('preloader').style.display("block");
+            hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+            hiddenElement.target = '_blank';
+            hiddenElement.download = 'jpex.txt';
+            hiddenElement.click();
+            document.location.reload();
+            alert("Thank you for using Jpex! Your file has been downloaded .");
+            //     function saveStaticDataToFile() {
+            //     var blob = new Blob([text],
+            //         { type: "text/plain;charset=utf-8" });
+            //     saveAs(blob, "output.txt");
+            // }
+        }
+    </script>
+</body>
+
+</html>
