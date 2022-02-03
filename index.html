@@ -18,7 +18,8 @@
     <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
     <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
     <meta property="og:type" content="article" />
-
+    
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     <!-- Website Title -->
     <title>Jpex -Image to Text Convertor</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -95,7 +96,7 @@
                     <div class="col-lg-6 col-xl-5">
                         <div class="text-container">
                             <h1>JPEX - Image to Text Convertor</h1>
-                            <p class="p-large">To convert image to text , upload the picture and click on submit button.
+                            <p class="p-large">To convert image to text , upload the picture and wait for few seconds .
                             </p>
                             <a class="btn-solid-lg page-scroll" href="#video">VIEW TUTORIAL</a>
                         </div>
@@ -512,7 +513,6 @@
             
 
             var hiddenElement = document.createElement('a');
-            // document.getElementById('preloader').style.display("block");
             hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
             hiddenElement.target = '_blank';
             hiddenElement.download = 'jpex.txt';
